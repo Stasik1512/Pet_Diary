@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnNext
             // 
@@ -62,6 +64,7 @@
             this.btnNext.TabIndex = 2;
             this.btnNext.Text = "Дальше";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // label1
             // 
@@ -77,7 +80,7 @@
             this.cbOwner.FormattingEnabled = true;
             this.cbOwner.Location = new System.Drawing.Point(16, 41);
             this.cbOwner.Name = "cbOwner";
-            this.cbOwner.Size = new System.Drawing.Size(314, 21);
+            this.cbOwner.Size = new System.Drawing.Size(377, 21);
             this.cbOwner.TabIndex = 4;
             // 
             // MainForm
@@ -90,6 +93,7 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Owners";
             this.ResumeLayout(false);

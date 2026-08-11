@@ -46,7 +46,7 @@ namespace Pet_Diary
                     "Владелец успешно добавлен!",
                     "Готово",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+                    MessageBoxIcon.Information);
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

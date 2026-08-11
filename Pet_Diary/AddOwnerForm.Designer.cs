@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOwnerForm));
             this.labelName = new System.Windows.Forms.Label();
             this.tbOwnerName = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
@@ -118,6 +119,7 @@
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.tbOwnerName);
             this.Controls.Add(this.labelName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddOwnerForm";
             this.Text = "AddOwnerForm";
             this.ResumeLayout(false);
