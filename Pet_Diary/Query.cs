@@ -12,6 +12,7 @@ namespace Pet_Diary
      public class Query
     {
         private readonly DataBase dataBase;
+
         public Query(DataBase dataBase)
         {
             this.dataBase = dataBase;
@@ -130,5 +131,44 @@ namespace Pet_Diary
 
             return dataBase.ExecuteNonQuery(query, parameter);
         }
-    }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public DataTable GetPetsByOwner(short ownerId)
+        {
+            string query = @"
+            SELECT pet_id, pet_name, pet_breed
+            FROM Pets
+            WHERE owner = @owner_id
+            ORDER BY pet_name";
+            SqlParameter parameter = new SqlParameter("@owner_id", ownerId);
+            return dataBase.ExecuteQuery(query, parameter);
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        public int AddPet
+        (
+            string petName,
+            string petBreed,
+            string petGender,
+            DateTime petBirth,
+            short ownerId
+        )
+        {
+            string query = @"
+            INSERT INTO Pets(pet_name, pet_breed, pet_gender, pet_birth, owner)
+            VALUES(@pet_name, @pet_breed, @pet_gender, @pet_birth, @owner)";
+
+            SqlParameter[] parameter =
+            {
+                new SqlParameter("@pet_name", petName),
+                new SqlParameter("@pet_breed", petBreed),
+                new SqlParameter("@pet_gender", petGender),
+                new SqlParameter("@pet_birth", petBirth),
+                new SqlParameter("@owner", ownerId)
+            };
+
+            return dataBase.ExecuteNonQuery (query, parameter);
+        }
+
+     }
 }

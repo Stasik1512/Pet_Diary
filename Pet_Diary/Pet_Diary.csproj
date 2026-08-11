@@ -53,6 +53,12 @@
     <Compile Include="AddOwnerForm.Designer.cs">
       <DependentUpon>AddOwnerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPetForm.Designer.cs">
+      <DependentUpon>AddPetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -71,6 +77,9 @@
     <Compile Include="Query.cs" />
     <EmbeddedResource Include="AddOwnerForm.resx">
       <DependentUpon>AddOwnerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPetForm.resx">
+      <DependentUpon>AddPetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

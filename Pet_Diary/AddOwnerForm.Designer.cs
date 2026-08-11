@@ -35,8 +35,8 @@
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelName
@@ -87,32 +87,31 @@
             this.tbEmail.Size = new System.Drawing.Size(173, 20);
             this.tbEmail.TabIndex = 5;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(135, 139);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(222, 139);
+            this.btnCancel.Location = new System.Drawing.Point(222, 136);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(75, 28);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(140, 136);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(76, 28);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Сохранить";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // AddOwnerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 174);
-            this.Controls.Add(this.btnCancel);
+            this.ClientSize = new System.Drawing.Size(313, 177);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.tbPhone);
@@ -121,6 +120,7 @@
             this.Controls.Add(this.labelName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddOwnerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddOwnerForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,7 +135,7 @@
         private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
     }
 }
