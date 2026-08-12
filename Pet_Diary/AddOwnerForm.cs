@@ -22,7 +22,12 @@ namespace Pet_Diary
             query = new Query(dataBase);
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSaveOwner_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbOwnerName.Text))
             {
@@ -57,7 +62,7 @@ namespace Pet_Diary
                     "Не удалось добавить владельца",
                     "Ошибка",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error); 
+                    MessageBoxIcon.Error);
 
             }
         }

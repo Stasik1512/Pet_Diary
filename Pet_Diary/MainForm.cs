@@ -27,6 +27,7 @@ namespace Pet_Diary
         {
             DataTable owners = query.GetAllOwners();
 
+            cbOwner.DataSource = null;
             cbOwner.DataSource = owners;
             cbOwner  .DisplayMember = "owner_name";
             cbOwner.ValueMember = "owner_id";

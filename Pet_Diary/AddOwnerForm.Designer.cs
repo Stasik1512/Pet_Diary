@@ -36,7 +36,7 @@
             this.labelEmail = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnSaveOwner = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelName
@@ -95,22 +95,24 @@
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnSave
+            // btnSaveOwner
             // 
-            this.btnSave.Location = new System.Drawing.Point(140, 136);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(76, 28);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSaveOwner.Location = new System.Drawing.Point(140, 136);
+            this.btnSaveOwner.Name = "btnSaveOwner";
+            this.btnSaveOwner.Size = new System.Drawing.Size(76, 28);
+            this.btnSaveOwner.TabIndex = 10;
+            this.btnSaveOwner.Text = "Сохранить";
+            this.btnSaveOwner.UseVisualStyleBackColor = true;
+            this.btnSaveOwner.Click += new System.EventHandler(this.btnSaveOwner_Click_1);
             // 
             // AddOwnerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 177);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnSaveOwner);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.labelEmail);
@@ -136,6 +138,6 @@
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSaveOwner;
     }
 }

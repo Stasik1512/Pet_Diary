@@ -14,6 +14,7 @@ namespace Pet_Diary
     public partial class PetsForm : Form
     {
         private readonly short ownerId;
+
         private readonly Query query;
         public PetsForm(short ownerId)
         {
@@ -29,7 +30,9 @@ namespace Pet_Diary
         {
             DataTable pets = query.GetPetsByOwner(ownerId);
 
+            cbPets.DataSource = null;
             cbPets.DataSource = pets;
+
             cbPets.DisplayMember = "pet_name";
             cbPets.ValueMember = "pet_id";
         }
@@ -51,6 +54,48 @@ namespace Pet_Diary
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.Close(); 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (cbPets.SelectedValue == null)
+            {
+                MessageBox.Show
+                (
+                    "Сначала выберите питомца",
+                    "Внимание",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+            short petId = Convert.ToInt16(cbPets.SelectedValue);
+            //MessageBox.Show($"Выбран owner_id: {ownerId}");
+
+            DialogResult result = MessageBox.Show
+            (
+                "Вы действительно хотите удалить выбранного питомца?",
+                "Удаление питомца",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            if (result == DialogResult.No)
+                return;
+
+            int rownAffected = query.DeletePet(petId);
+
+            if (rownAffected > 0)
+            {
+                MessageBox.Show
+                (
+                    "Питомец успешно удален!",
+                    "Готово",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                LoadPets();
+            }
         }
     }
 }

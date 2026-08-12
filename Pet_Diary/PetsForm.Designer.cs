@@ -32,7 +32,7 @@
             this.labelPets = new System.Windows.Forms.Label();
             this.cbPets = new System.Windows.Forms.ComboBox();
             this.btnNext = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnDeletePet = new System.Windows.Forms.Button();
             this.btnAddPet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -72,14 +72,15 @@
             this.btnNext.Text = "Дальше";
             this.btnNext.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // btnDeletePet
             // 
-            this.btnDelete.Location = new System.Drawing.Point(153, 90);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(76, 28);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Удалить";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDeletePet.Location = new System.Drawing.Point(153, 90);
+            this.btnDeletePet.Name = "btnDeletePet";
+            this.btnDeletePet.Size = new System.Drawing.Size(76, 28);
+            this.btnDeletePet.TabIndex = 4;
+            this.btnDeletePet.Text = "Удалить";
+            this.btnDeletePet.UseVisualStyleBackColor = true;
+            this.btnDeletePet.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAddPet
             // 
@@ -97,7 +98,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 130);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnDeletePet);
             this.Controls.Add(this.btnAddPet);
             this.Controls.Add(this.cbPets);
             this.Controls.Add(this.labelPets);
@@ -116,7 +117,7 @@
         private System.Windows.Forms.Label labelPets;
         private System.Windows.Forms.ComboBox cbPets;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnDeletePet;
         private System.Windows.Forms.Button btnAddPet;
     }
 }

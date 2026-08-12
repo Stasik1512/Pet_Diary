@@ -125,7 +125,7 @@ namespace Pet_Diary
         {
             string query = @"
             DELETE FROM Pets
-            WHERE pets_id = @pet_id";
+            WHERE pet_id = @pet_id";
 
             SqlParameter parameter = new SqlParameter("@pet_id", petId);
 
@@ -169,6 +169,7 @@ namespace Pet_Diary
 
             return dataBase.ExecuteNonQuery (query, parameter);
         }
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
 
      }
 }
