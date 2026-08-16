@@ -37,7 +37,7 @@ namespace Pet_Diary
         {
             AddOwnerForm form = new AddOwnerForm();
             if (form.ShowDialog() == DialogResult.OK)
-            { }
+                LoadOwners();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -100,5 +100,7 @@ namespace Pet_Diary
             PetsForm form = new PetsForm(ownerId);
             form.ShowDialog();
         }
+
+
     }
 }

@@ -171,5 +171,21 @@ namespace Pet_Diary
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-     }
+        public DataTable GetPetProfile(short petId)
+        {
+            string query = @"
+                SELECT
+                    Pets.pet_name,
+                    Pets.pet_breed,
+                    Pets.pet_gender,
+                    Pets.pet_birth,
+                    Owners.owner_name
+                FROM Pets
+                INNER JOIN Owners ON Pets.owner = Owners.owner_id
+                WHERE Pets.pet_id = @pet_id";
+
+            SqlParameter parameter = new SqlParameter("@pet_id", petId);
+            return dataBase.ExecuteQuery(query, parameter);
+        }
+    }
 }

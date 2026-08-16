@@ -71,6 +71,7 @@
             this.btnNext.TabIndex = 5;
             this.btnNext.Text = "Дальше";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnDeletePet
             // 

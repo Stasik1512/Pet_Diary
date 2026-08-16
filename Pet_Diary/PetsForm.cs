@@ -97,5 +97,24 @@ namespace Pet_Diary
                 LoadPets();
             }
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if(cbPets.SelectedValue == null)
+            {
+                MessageBox.Show
+                (
+                    "Сначала выберите питомца",
+                    "Внимание",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            short petId = Convert.ToInt16(cbPets.SelectedValue);
+            PetProfileForm from = new PetProfileForm(petId);
+            from.ShowDialog();
+        }
     }
 }

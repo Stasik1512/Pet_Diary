@@ -34,11 +34,14 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbOwner = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(151, 82);
+            this.btnAdd.Location = new System.Drawing.Point(151, 158);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(76, 28);
             this.btnAdd.TabIndex = 0;
@@ -48,7 +51,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(235, 82);
+            this.btnDelete.Location = new System.Drawing.Point(235, 158);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 28);
             this.btnDelete.TabIndex = 1;
@@ -58,7 +61,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(317, 82);
+            this.btnNext.Location = new System.Drawing.Point(317, 158);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(76, 28);
             this.btnNext.TabIndex = 2;
@@ -69,25 +72,55 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 9);
+            this.label1.Location = new System.Drawing.Point(12, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 13);
+            this.label1.Size = new System.Drawing.Size(117, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Выберите владельца";
+            this.label1.Text = "Выберите владельца:";
             // 
             // cbOwner
             // 
             this.cbOwner.FormattingEnabled = true;
-            this.cbOwner.Location = new System.Drawing.Point(16, 41);
+            this.cbOwner.Location = new System.Drawing.Point(15, 117);
             this.cbOwner.Name = "cbOwner";
-            this.cbOwner.Size = new System.Drawing.Size(377, 21);
+            this.cbOwner.Size = new System.Drawing.Size(378, 21);
             this.cbOwner.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(216, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Приветствуем вас в Дневнике питомцев";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(311, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Здесь вы сможете хранить информацию о своем любимце.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 56);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(353, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Хранить вес, питание, лечение, вакцинации, диагнозы и документы";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 122);
+            this.ClientSize = new System.Drawing.Size(405, 197);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cbOwner);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnNext);
@@ -109,6 +142,9 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbOwner;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
