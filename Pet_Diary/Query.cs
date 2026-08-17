@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,6 +47,16 @@ namespace Pet_Diary
             SqlParameter parameter =
                 new SqlParameter("@owner_id", ownerId);
             return dataBase.ExecuteNonQuery(query, parameter);
+        }
+        public int GetPetsCountByOwner(short ownerId)
+        {
+            string query = @"
+            SELECT COUNT(*)
+            FROM Pets
+            WHERE owner = @owner_id";
+            SqlParameter parameter = new SqlParameter("@owner_id", ownerId);
+
+            return Convert.ToInt32(dataBase.ExecuteScalar(query, parameter));
         }
 
         public int UpdateOwner(short ownerId,string ownerName, string phone, string email) // обновление
@@ -179,6 +190,7 @@ namespace Pet_Diary
                     Pets.pet_breed,
                     Pets.pet_gender,
                     Pets.pet_birth,
+                    Pets.pet_photo,
                     Owners.owner_name
                 FROM Pets
                 INNER JOIN Owners ON Pets.owner = Owners.owner_id
@@ -187,5 +199,26 @@ namespace Pet_Diary
             SqlParameter parameter = new SqlParameter("@pet_id", petId);
             return dataBase.ExecuteQuery(query, parameter);
         }
-    }
+
+            //////////////////////////////////////////////////////////////////////////////////////////////
+            public int UpdatePetPhoto(short petId, byte[] photo)
+            {
+                string query = @"
+                        UPDATE Pets
+                        SET pet_photo = @pet_photo
+                        WHERE pet_id = @pet_id";
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("pet_photo", SqlDbType.Image)
+                    {
+                        Value = photo
+                    },
+                    new SqlParameter("pet_id", petId)
+                };
+
+                return dataBase.ExecuteNonQuery(query, parameters);
+
+             }
+    
+     }
 }

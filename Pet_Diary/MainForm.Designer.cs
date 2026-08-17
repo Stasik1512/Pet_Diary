@@ -91,9 +91,10 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 13);
+            this.label2.Size = new System.Drawing.Size(219, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Приветствуем вас в Дневнике питомцев";
+            this.label2.Text = "Приветствуем вас в Дневнике питомцев!";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 

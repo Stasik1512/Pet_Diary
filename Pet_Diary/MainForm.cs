@@ -65,8 +65,20 @@ namespace Pet_Diary
             );
             if (result == DialogResult.No)
                 return;
-
-            int rownAffected = query.DeleteOwner( ownerId );
+            int petsCount = query.GetPetsCountByOwner(ownerId);
+            if (petsCount > 0)
+            {
+                MessageBox.Show
+                (
+                    "Нельзя удалить владельца, потому что у него есть питомцы\n\n" +
+                    "Сначала удалите или переназначьте его питомцев",
+                    "Удаление невозможно",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+            int rownAffected = query.DeleteOwner(ownerId);
 
             if( rownAffected > 0 )
             {
@@ -101,6 +113,9 @@ namespace Pet_Diary
             form.ShowDialog();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

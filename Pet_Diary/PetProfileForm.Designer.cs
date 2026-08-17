@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PetProfileForm));
+            this.pbPetPhoto = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelPetBirth = new System.Windows.Forms.Label();
             this.labelPetGender = new System.Windows.Forms.Label();
@@ -43,23 +44,24 @@
             this.lblPetGenderValue = new System.Windows.Forms.Label();
             this.lblPetBirthValue = new System.Windows.Forms.Label();
             this.lblOwnerValue = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPetPhoto)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbPetPhoto
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 167);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbPetPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbPetPhoto.Location = new System.Drawing.Point(12, 31);
+            this.pbPetPhoto.Name = "pbPetPhoto";
+            this.pbPetPhoto.Size = new System.Drawing.Size(152, 167);
+            this.pbPetPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPetPhoto.TabIndex = 0;
+            this.pbPetPhoto.TabStop = false;
+            this.pbPetPhoto.DoubleClick += new System.EventHandler(this.pbPetPhoto_DoubleClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(182, 9);
+            this.label1.Location = new System.Drawing.Point(210, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 1;
@@ -112,16 +114,17 @@
             // 
             // btnMedical
             // 
-            this.btnMedical.Location = new System.Drawing.Point(13, 239);
+            this.btnMedical.Location = new System.Drawing.Point(35, 239);
             this.btnMedical.Name = "btnMedical";
             this.btnMedical.Size = new System.Drawing.Size(135, 46);
             this.btnMedical.TabIndex = 9;
             this.btnMedical.Text = "Мед. карта";
             this.btnMedical.UseVisualStyleBackColor = true;
+            this.btnMedical.Click += new System.EventHandler(this.btnMedical_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(163, 239);
+            this.btnCancel.Location = new System.Drawing.Point(185, 239);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(135, 46);
             this.btnCancel.TabIndex = 10;
@@ -131,7 +134,7 @@
             // 
             // btnDocuments
             // 
-            this.btnDocuments.Location = new System.Drawing.Point(313, 239);
+            this.btnDocuments.Location = new System.Drawing.Point(335, 239);
             this.btnDocuments.Name = "btnDocuments";
             this.btnDocuments.Size = new System.Drawing.Size(135, 46);
             this.btnDocuments.TabIndex = 11;
@@ -202,11 +205,12 @@
             this.Controls.Add(this.labelPetBreed);
             this.Controls.Add(this.labelPetName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbPetPhoto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PetProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PetProfileForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPetPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +218,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPetPhoto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelPetBirth;
         private System.Windows.Forms.Label labelPetGender;

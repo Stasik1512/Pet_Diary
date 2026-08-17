@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPetForm));
             this.labelName = new System.Windows.Forms.Label();
             this.labelBreed = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
@@ -143,7 +144,9 @@
             this.Controls.Add(this.labelGender);
             this.Controls.Add(this.labelBreed);
             this.Controls.Add(this.labelName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddPetForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddPetForm";
             this.ResumeLayout(false);
             this.PerformLayout();

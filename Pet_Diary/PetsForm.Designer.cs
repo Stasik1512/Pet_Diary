@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PetsForm));
             this.btnCancel = new System.Windows.Forms.Button();
             this.labelPets = new System.Windows.Forms.Label();
             this.cbPets = new System.Windows.Forms.ComboBox();
@@ -104,6 +105,7 @@
             this.Controls.Add(this.cbPets);
             this.Controls.Add(this.labelPets);
             this.Controls.Add(this.btnCancel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PetsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PetsForm";
