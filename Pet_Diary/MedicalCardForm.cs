@@ -16,6 +16,7 @@ namespace Pet_Diary
         public MedicalCardForm(short petId)
         {
             InitializeComponent();
+            this.Font = new Font("Tahoma", 14);
 
             this.petId = petId;
         }
@@ -27,8 +28,16 @@ namespace Pet_Diary
 
         private void btnWeight_Click(object sender, EventArgs e)
         {
-            WeightForm form = new WeightForm();
-            form.ShowDialog();
+            WeightForm weightForm = new WeightForm(petId);
+            weightForm.ShowDialog();
+        }
+
+        private void btnFood_Click(object sender, EventArgs e)
+        {
+            FoodForm foodForm = new FoodForm(petId);
+            foodForm.ShowDialog();
         }
     }
 }
+// все спасибо большое
+// Ю ар велкам))) выхожу

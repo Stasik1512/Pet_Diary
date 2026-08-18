@@ -65,6 +65,7 @@
             this.btnFood.TabIndex = 3;
             this.btnFood.Text = "Питание";
             this.btnFood.UseVisualStyleBackColor = true;
+            this.btnFood.Click += new System.EventHandler(this.btnFood_Click);
             // 
             // btnVaccination
             // 

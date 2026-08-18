@@ -19,6 +19,7 @@ namespace Pet_Diary
         public PetsForm(short ownerId)
         {
             InitializeComponent();
+            this.Font = new Font("Tahoma", 14);
             this.ownerId = ownerId;
 
             DataBase dataBase = new DataBase();

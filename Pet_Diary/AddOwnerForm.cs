@@ -17,6 +17,7 @@ namespace Pet_Diary
         public AddOwnerForm()
         {
             InitializeComponent();
+            this.Font = new Font("Tahoma", 14);
 
             DataBase dataBase = new DataBase();
             query = new Query(dataBase);

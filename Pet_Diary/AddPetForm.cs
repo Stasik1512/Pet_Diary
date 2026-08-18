@@ -17,6 +17,7 @@ namespace Pet_Diary
         public AddPetForm(short ownerId)
         {
             InitializeComponent();
+            this.Font = new Font("Tahoma", 14);
 
             this.ownerId = ownerId;
 

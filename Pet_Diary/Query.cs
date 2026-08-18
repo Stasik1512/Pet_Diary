@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Pet_Diary
 {
-     public class Query
+    public class Query
     {
         private readonly DataBase dataBase;
 
@@ -59,7 +61,7 @@ namespace Pet_Diary
             return Convert.ToInt32(dataBase.ExecuteScalar(query, parameter));
         }
 
-        public int UpdateOwner(short ownerId,string ownerName, string phone, string email) // обновление
+        public int UpdateOwner(short ownerId, string ownerName, string phone, string email) // обновление
         {
             string query = @"
             UPDATE Owners
@@ -75,7 +77,7 @@ namespace Pet_Diary
             new SqlParameter("@email", email)
             };
 
-            return dataBase.ExecuteNonQuery(query,parameters);
+            return dataBase.ExecuteNonQuery(query, parameters);
         }
 
 
@@ -107,7 +109,7 @@ namespace Pet_Diary
 
             return dataBase.ExecuteNonQuery(query, parameters);
         }
-         public int UpdatePet(short petId, string petName, string petBreed, string petGender, string petPhoto, DateTime petBirth, string ownerId)
+        public int UpdatePet(short petId, string petName, string petBreed, string petGender, string petPhoto, DateTime petBirth, string ownerId)
         {
             string query = @"
             UPDATE Pets
@@ -126,10 +128,10 @@ namespace Pet_Diary
                 new SqlParameter("@pet_breed", petBreed),
                 new SqlParameter("@pet_gender", petGender),
                 new SqlParameter("@pet_photo", petPhoto),
-                new SqlParameter("@pet_Birth", petBirth),    
+                new SqlParameter("@pet_Birth", petBirth),
                 new SqlParameter("@owner_id", ownerId)
             };
-            return dataBase.ExecuteNonQuery(query,parameters);
+            return dataBase.ExecuteNonQuery(query, parameters);
         }
 
         public int DeletePet(short petId)
@@ -155,7 +157,7 @@ namespace Pet_Diary
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
+
         public int AddPet
         (
             string petName,
@@ -178,7 +180,7 @@ namespace Pet_Diary
                 new SqlParameter("@owner", ownerId)
             };
 
-            return dataBase.ExecuteNonQuery (query, parameter);
+            return dataBase.ExecuteNonQuery(query, parameter);
         }
         ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -200,25 +202,80 @@ namespace Pet_Diary
             return dataBase.ExecuteQuery(query, parameter);
         }
 
-            //////////////////////////////////////////////////////////////////////////////////////////////
-            public int UpdatePetPhoto(short petId, byte[] photo)
-            {
-                string query = @"
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        public int UpdatePetPhoto(short petId, byte[] photo)
+        {
+            string query = @"
                         UPDATE Pets
                         SET pet_photo = @pet_photo
                         WHERE pet_id = @pet_id";
-                SqlParameter[] parameters =
-                {
+            SqlParameter[] parameters =
+            {
                     new SqlParameter("pet_photo", SqlDbType.Image)
                     {
                         Value = photo
                     },
                     new SqlParameter("pet_id", petId)
-                };
+            };
 
-                return dataBase.ExecuteNonQuery(query, parameters);
+            return dataBase.ExecuteNonQuery(query, parameters);
+        }
+         public DataTable GetWeightRecords(short petId)
+         {
+            string query = @"
+            SELECT date, weight
+            FROM WeightRecords
+            WHERE pet = @pet_id
+            ORDER BY date DESC";
 
-             }
-    
-     }
+            SqlParameter parameter = new SqlParameter("@pet_id", petId);
+
+            return dataBase.ExecuteQuery(query, parameter);
+         }
+
+        public void AddWeightRecord(short petId, decimal weight, DateTime date)
+        {
+            string query = @"
+            INSERT INTO WeightRecords(pet, weight, date)
+            VALUES (@pet, @weight, @date)";
+
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@pet", petId),
+                new SqlParameter("@weight", weight),
+                new SqlParameter("@date", date)
+            };
+
+            dataBase.ExecuteNonQuery(query, parameters);
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        public DataTable GetNutritionRecords(short petId)
+        {
+            string query = @"
+            SELECT food_name, food_type, [date]
+            FROM Nutritions
+            WHERE pet = @pet_id
+            ORDER BY [date] DESC";
+
+            SqlParameter parameter = new SqlParameter("@pet_id", petId);
+
+            return dataBase.ExecuteQuery(query,parameter);
+        }
+        public void AddNutritionsRecord(short petId, string foodName, string foodType, DateTime date)
+        {
+            string query = @"
+            INSERT INTO Nutritions(pet, food_type, food_name, [date])
+            VALUES(@pet,@food_type, @food_name, @date)";
+
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@pet", petId),
+                new SqlParameter("@food_type", foodType),
+                new SqlParameter("@food_name", foodName),
+                new SqlParameter("@date", date)
+            };
+
+            dataBase.ExecuteNonQuery(query, parameters);
+        }
+    }
 }
