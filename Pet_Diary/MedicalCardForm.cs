@@ -37,6 +37,12 @@ namespace Pet_Diary
             FoodForm foodForm = new FoodForm(petId);
             foodForm.ShowDialog();
         }
+
+        private void btnVaccination_Click(object sender, EventArgs e)
+        {
+            VaccinationForm vaccinationForm = new VaccinationForm(petId);
+            vaccinationForm.ShowDialog();
+        }
     }
 }
 // все спасибо большое

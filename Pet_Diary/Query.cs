@@ -277,5 +277,38 @@ namespace Pet_Diary
 
             dataBase.ExecuteNonQuery(query, parameters);
         }
+          ///////////////////////////////////////////////////////////////////
+        public DataTable GetVaccinationRecords(short petId)
+        {
+            string query = @"
+            SELECT vac_name, vac_date, next_vac
+            FROM Vaccinations
+            WHERE pet = @pet
+            ORDER BY vac_date DESC";
+
+            SqlParameter parameter = new SqlParameter("@pet",petId);
+
+            return dataBase.ExecuteQuery(query, parameter);
+        }
+
+        public void AddVaccinationRecord(short petId, string vaccineName, DateTime vaccinationDate, DateTime nextVaccinationDate)
+        {
+            string query = @"
+            INSERT INTO Vaccinations
+            (vac_id, pet, vac_name, vac_date, next_vac)
+            VALUES
+            (@vac_id, @pet, @vac_name, @vac_date, @next_vac)";
+
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@vac_id", Guid.NewGuid().ToString()),
+                new SqlParameter("@pet", petId),
+                new SqlParameter("@vac_name", vaccineName),
+                new SqlParameter("@vac_date", vaccinationDate),
+                new SqlParameter("@next_vac", nextVaccinationDate)
+            };
+
+            dataBase.ExecuteNonQuery(query, parameters);
+        }
     }
 }

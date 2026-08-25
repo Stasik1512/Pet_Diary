@@ -75,6 +75,7 @@
             this.btnVaccination.TabIndex = 4;
             this.btnVaccination.Text = "Вакцинация";
             this.btnVaccination.UseVisualStyleBackColor = true;
+            this.btnVaccination.Click += new System.EventHandler(this.btnVaccination_Click);
             // 
             // btnDiagnosis
             // 
