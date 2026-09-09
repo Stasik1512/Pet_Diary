@@ -49,6 +49,20 @@ namespace Pet_Diary
                     dgvVaccination.Columns["next_vac"].HeaderText = "Следующая вакцинация";
                     dgvVaccination.Columns["next_vac"].DefaultCellStyle.Format = "dd.MM.yyyy";
                 }
+                if(vaccinations.Rows.Count > 0)
+                {
+                    DataRow lastVaccination = vaccinations.Rows[0];
+                    string vaccineName = Convert.ToString(lastVaccination["vac_name"]);
+                    DateTime vaccinationDate = Convert.ToDateTime(lastVaccination["vac_date"]);
+
+                    lblLastVaccineName.Text = $"Название:{vaccineName}";
+                    lblLastVaccinationDate.Text = $"Дата: {vaccinationDate: dd.MM.yyyy}";
+                }
+                else
+                {
+                    lblLastVaccineName.Text = $"Название: -";
+                    lblLastVaccinationDate.Text = $"Дата: -";
+                }
             }
             catch (Exception ex)
             {

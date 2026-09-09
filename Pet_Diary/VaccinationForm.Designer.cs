@@ -33,7 +33,6 @@
             this.labelFoodPet = new System.Windows.Forms.Label();
             this.dgvVaccination = new System.Windows.Forms.DataGridView();
             this.lblLastVaccinationDate = new System.Windows.Forms.Label();
-            this.lblLastVaccination = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dtpNextVaccinationDate = new System.Windows.Forms.DateTimePicker();
@@ -48,7 +47,7 @@
             // lblNextVaccinationDate
             // 
             this.lblNextVaccinationDate.AutoSize = true;
-            this.lblNextVaccinationDate.Location = new System.Drawing.Point(12, 234);
+            this.lblNextVaccinationDate.Location = new System.Drawing.Point(13, 216);
             this.lblNextVaccinationDate.Name = "lblNextVaccinationDate";
             this.lblNextVaccinationDate.Size = new System.Drawing.Size(99, 13);
             this.lblNextVaccinationDate.TabIndex = 34;
@@ -75,7 +74,7 @@
             // 
             this.dgvVaccination.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVaccination.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvVaccination.Location = new System.Drawing.Point(11, 90);
+            this.dgvVaccination.Location = new System.Drawing.Point(12, 72);
             this.dgvVaccination.Name = "dgvVaccination";
             this.dgvVaccination.Size = new System.Drawing.Size(409, 106);
             this.dgvVaccination.TabIndex = 31;
@@ -83,24 +82,15 @@
             // lblLastVaccinationDate
             // 
             this.lblLastVaccinationDate.AutoSize = true;
-            this.lblLastVaccinationDate.Location = new System.Drawing.Point(8, 74);
+            this.lblLastVaccinationDate.Location = new System.Drawing.Point(9, 56);
             this.lblLastVaccinationDate.Name = "lblLastVaccinationDate";
             this.lblLastVaccinationDate.Size = new System.Drawing.Size(36, 13);
             this.lblLastVaccinationDate.TabIndex = 30;
             this.lblLastVaccinationDate.Text = "Дата:";
             // 
-            // lblLastVaccination
-            // 
-            this.lblLastVaccination.AutoSize = true;
-            this.lblLastVaccination.Location = new System.Drawing.Point(8, 34);
-            this.lblLastVaccination.Name = "lblLastVaccination";
-            this.lblLastVaccination.Size = new System.Drawing.Size(132, 13);
-            this.lblLastVaccination.TabIndex = 29;
-            this.lblLastVaccination.Text = "Последняя вакцинация: ";
-            // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(345, 283);
+            this.btnClose.Location = new System.Drawing.Point(346, 265);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(76, 28);
             this.btnClose.TabIndex = 28;
@@ -110,7 +100,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(263, 283);
+            this.btnSave.Location = new System.Drawing.Point(264, 265);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(76, 28);
             this.btnSave.TabIndex = 27;
@@ -121,7 +111,7 @@
             // dtpNextVaccinationDate
             // 
             this.dtpNextVaccinationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNextVaccinationDate.Location = new System.Drawing.Point(149, 257);
+            this.dtpNextVaccinationDate.Location = new System.Drawing.Point(150, 239);
             this.dtpNextVaccinationDate.Name = "dtpNextVaccinationDate";
             this.dtpNextVaccinationDate.Size = new System.Drawing.Size(272, 20);
             this.dtpNextVaccinationDate.TabIndex = 26;
@@ -129,7 +119,7 @@
             // lblNextVaccination
             // 
             this.lblNextVaccination.AutoSize = true;
-            this.lblNextVaccination.Location = new System.Drawing.Point(11, 261);
+            this.lblNextVaccination.Location = new System.Drawing.Point(12, 243);
             this.lblNextVaccination.Name = "lblNextVaccination";
             this.lblNextVaccination.Size = new System.Drawing.Size(132, 13);
             this.lblNextVaccination.TabIndex = 25;
@@ -137,7 +127,7 @@
             // 
             // tbVaccineName
             // 
-            this.tbVaccineName.Location = new System.Drawing.Point(149, 202);
+            this.tbVaccineName.Location = new System.Drawing.Point(150, 184);
             this.tbVaccineName.Name = "tbVaccineName";
             this.tbVaccineName.Size = new System.Drawing.Size(272, 20);
             this.tbVaccineName.TabIndex = 24;
@@ -145,7 +135,7 @@
             // lblNextVaccinetionName
             // 
             this.lblNextVaccinetionName.AutoSize = true;
-            this.lblNextVaccinetionName.Location = new System.Drawing.Point(9, 205);
+            this.lblNextVaccinetionName.Location = new System.Drawing.Point(10, 187);
             this.lblNextVaccinetionName.Name = "lblNextVaccinetionName";
             this.lblNextVaccinetionName.Size = new System.Drawing.Size(104, 13);
             this.lblNextVaccinetionName.TabIndex = 23;
@@ -154,7 +144,7 @@
             // dtpVaccinationDate
             // 
             this.dtpVaccinationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpVaccinationDate.Location = new System.Drawing.Point(149, 230);
+            this.dtpVaccinationDate.Location = new System.Drawing.Point(150, 212);
             this.dtpVaccinationDate.Name = "dtpVaccinationDate";
             this.dtpVaccinationDate.Size = new System.Drawing.Size(272, 20);
             this.dtpVaccinationDate.TabIndex = 35;
@@ -162,7 +152,7 @@
             // lblLastVaccineName
             // 
             this.lblLastVaccineName.AutoSize = true;
-            this.lblLastVaccineName.Location = new System.Drawing.Point(8, 53);
+            this.lblLastVaccineName.Location = new System.Drawing.Point(9, 35);
             this.lblLastVaccineName.Name = "lblLastVaccineName";
             this.lblLastVaccineName.Size = new System.Drawing.Size(60, 13);
             this.lblLastVaccineName.TabIndex = 36;
@@ -172,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 326);
+            this.ClientSize = new System.Drawing.Size(434, 305);
             this.Controls.Add(this.lblLastVaccineName);
             this.Controls.Add(this.dtpVaccinationDate);
             this.Controls.Add(this.lblNextVaccinationDate);
@@ -180,7 +170,6 @@
             this.Controls.Add(this.labelFoodPet);
             this.Controls.Add(this.dgvVaccination);
             this.Controls.Add(this.lblLastVaccinationDate);
-            this.Controls.Add(this.lblLastVaccination);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dtpNextVaccinationDate);
@@ -201,7 +190,6 @@
         private System.Windows.Forms.Label labelFoodPet;
         private System.Windows.Forms.DataGridView dgvVaccination;
         private System.Windows.Forms.Label lblLastVaccinationDate;
-        private System.Windows.Forms.Label lblLastVaccination;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DateTimePicker dtpNextVaccinationDate;
