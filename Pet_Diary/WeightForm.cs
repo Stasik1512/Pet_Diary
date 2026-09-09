@@ -32,6 +32,8 @@ namespace Pet_Diary
             DataTable weights = query.GetWeightRecords(petId);
 
             dgvWeight.DataSource = weights;
+            dgvWeight.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvWeight.BackgroundColor = Color.White;
 
             if (dgvWeight.Columns.Contains("date"))
             {

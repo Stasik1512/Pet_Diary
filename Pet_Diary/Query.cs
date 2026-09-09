@@ -310,5 +310,34 @@ namespace Pet_Diary
 
             dataBase.ExecuteNonQuery(query, parameters);
         }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public DataTable GetDiagnosisRecords(short petId)
+        {
+            string query = @"
+            SELECT diagnosis_date, diagnosis, comment
+            FROM Diagnoses
+            WHERE pet = @pet
+            Order by diagnosis_date DESC";
+
+            SqlParameter parameter = new SqlParameter("@pet", petId);
+
+            return dataBase.ExecuteQuery(query, parameter);
+        }
+        public void AddDiagnosisRecord(short petId, string diagnosis, DateTime diagnosisDate, string comment)
+        {
+            string query = @"
+            INSERT INTO Diagnoses(pet, diagnosis, diagnosis_date, comment)
+            VALUES (@pet,@diagnosis, @diagnosis_date, @comment)";
+
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@pet", petId),
+                new SqlParameter("@diagnosis", diagnosis),
+                new SqlParameter("@diagnosis_date", diagnosisDate),
+                new SqlParameter("@comment", string.IsNullOrWhiteSpace(comment) ? (object)DBNull.Value : comment)
+            };
+
+            dataBase.ExecuteNonQuery(query, parameters);
+        }
     }
 }

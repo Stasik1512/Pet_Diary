@@ -43,6 +43,12 @@ namespace Pet_Diary
             VaccinationForm vaccinationForm = new VaccinationForm(petId);
             vaccinationForm.ShowDialog();
         }
+
+        private void btnDiagnosis_Click(object sender, EventArgs e)
+        {
+            DiagnosisFrom diagnosisFrom = new DiagnosisFrom(petId);
+            diagnosisFrom.ShowDialog();
+        }
     }
 }
 // все спасибо большое

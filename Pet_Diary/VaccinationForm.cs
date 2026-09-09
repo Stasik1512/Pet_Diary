@@ -17,6 +17,7 @@ namespace Pet_Diary
         public VaccinationForm(short petId)
         {
             InitializeComponent();
+            this.Font = new Font("Tahoma", 14);
             this.petId = petId;
 
             DataBase dataBase = new DataBase();
@@ -32,6 +33,8 @@ namespace Pet_Diary
                 DataTable vaccinations = query.GetVaccinationRecords(petId);
 
                 dgvVaccination.DataSource = vaccinations;
+                dgvVaccination.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvVaccination.BackgroundColor = Color.White;
 
                 if (dgvVaccination.Columns.Contains("vac_name"))
                 {

@@ -73,9 +73,9 @@
             this.lblNextVaccinationDate.AutoSize = true;
             this.lblNextVaccinationDate.Location = new System.Drawing.Point(13, 211);
             this.lblNextVaccinationDate.Name = "lblNextVaccinationDate";
-            this.lblNextVaccinationDate.Size = new System.Drawing.Size(99, 13);
+            this.lblNextVaccinationDate.Size = new System.Drawing.Size(86, 13);
             this.lblNextVaccinationDate.TabIndex = 47;
-            this.lblNextVaccinationDate.Text = "Дата вакцинации:";
+            this.lblNextVaccinationDate.Text = "Дата диагноза:";
             // 
             // lblLastFoodType
             // 
@@ -88,7 +88,7 @@
             // labelDiagnosisForm
             // 
             this.labelDiagnosisForm.AutoSize = true;
-            this.labelDiagnosisForm.Location = new System.Drawing.Point(171, 8);
+            this.labelDiagnosisForm.Location = new System.Drawing.Point(183, 9);
             this.labelDiagnosisForm.Name = "labelDiagnosisForm";
             this.labelDiagnosisForm.Size = new System.Drawing.Size(51, 13);
             this.labelDiagnosisForm.TabIndex = 45;
@@ -120,6 +120,7 @@
             this.btnClose.TabIndex = 42;
             this.btnClose.Text = "Назад";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -129,15 +130,16 @@
             this.btnSave.TabIndex = 41;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblComment
             // 
             this.lblComment.AutoSize = true;
             this.lblComment.Location = new System.Drawing.Point(12, 238);
             this.lblComment.Name = "lblComment";
-            this.lblComment.Size = new System.Drawing.Size(132, 13);
+            this.lblComment.Size = new System.Drawing.Size(80, 13);
             this.lblComment.TabIndex = 40;
-            this.lblComment.Text = "Следующая вакцинация:";
+            this.lblComment.Text = "Комментарий:";
             // 
             // tbDiagnosis
             // 

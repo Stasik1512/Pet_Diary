@@ -32,8 +32,10 @@ namespace Pet_Diary
             DataTable nutrition = query.GetNutritionRecords(petId);
 
             dgvFood.DataSource = nutrition;
+            dgvFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvFood.BackgroundColor = Color.White;
 
-            if(dgvFood.Columns.Contains("date"))
+            if (dgvFood.Columns.Contains("date"))
             {
                 dgvFood.Columns["date"].HeaderText = "Дата";
                 dgvFood.Columns["date"].DefaultCellStyle.Format = "dd.MM.yyyy";

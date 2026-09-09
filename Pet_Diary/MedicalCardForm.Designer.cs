@@ -85,6 +85,7 @@
             this.btnDiagnosis.TabIndex = 5;
             this.btnDiagnosis.Text = "Диагноз";
             this.btnDiagnosis.UseVisualStyleBackColor = true;
+            this.btnDiagnosis.Click += new System.EventHandler(this.btnDiagnosis_Click);
             // 
             // btnTreatment
             // 
